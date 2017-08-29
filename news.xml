@@ -1,0 +1,53 @@
+<openerp>
+  <data>
+    <record id="seq_type_news" model="ir.sequence.type">
+      <field name="name">News REG</field>
+      <field name="code">code_news</field>
+    </record>
+
+    <record id="seq_news" model="ir.sequence">
+      <field name="name">reg</field>
+      <field name="code">code_news</field>
+      <field name="prefix">news</field>
+      <field name="padding">2</field>
+    </record>
+
+    <record model="ir.ui.view" id="news_form_view">
+      <field name="name">news.app.form</field>
+      <field name="model">news.app</field>
+      <field name="arch" type="xml">
+        <form>
+          <group col="2">
+            <field name="title"/>
+            <field name="sub_title"/>
+            <field name="message"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="news_tree_view">
+      <field name="name">news.app.tree</field>
+      <field name="model">news.app</field>
+      <field name="arch" type="xml">
+        <tree string="News Tree" default_order="id desc">
+          <field name="title"/>
+          <field name="sub_title"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="news_list_action">
+      <field name="name">News</field>
+      <field name="res_model">news.app</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Create the first news</p>
+      </field>
+    </record>
+
+    <menuitem id="menu_action_news" name="News" parent="mail.mail_feeds_main" sequence="14" action="news_list_action"/>
+    <menuitem id="item_action_news" name="News" parent="menu_action_news" sequence="15" action="news_list_action"/>
+  </data>
+</openerp>
