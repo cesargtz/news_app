@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_news_app_news_app,news_app.news_app,model_news_app_news_app,,1,0,0,0
+access_news_app,news_app,model_news_app,market_price.access_market,1,1,1,1
