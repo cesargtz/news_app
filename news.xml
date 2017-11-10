@@ -1,6 +1,6 @@
 <openerp>
   <data>
-    <record id="seq_type_news" model="ir.sequence.type">
+    <record id="seq_type_news" model="ir.sequence">
       <field name="name">News REG</field>
       <field name="code">code_news</field>
     </record>
@@ -10,6 +10,7 @@
       <field name="code">code_news</field>
       <field name="prefix">news</field>
       <field name="padding">2</field>
+      <field name="implementation">no_gap</field>
     </record>
 
     <record model="ir.ui.view" id="news_form_view">
@@ -46,8 +47,6 @@
         <p class="oe_view_nocontent_create">Create the first news</p>
       </field>
     </record>
-
-    <menuitem id="menu_action_news" name="News" parent="mail.mail_feeds_main" sequence="14" action="news_list_action"/>
-    <menuitem id="item_action_news" name="News" parent="menu_action_news" sequence="15" action="news_list_action"/>
+    <menuitem id="item_action_news" name="News" parent="market_price.menu_group_market" sequence="79" action="news_list_action"/>
   </data>
 </openerp>
