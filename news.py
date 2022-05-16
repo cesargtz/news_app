@@ -2,6 +2,11 @@
 
 from openerp import models, fields, api
 
+class PartnerClave(models.Model):
+    _inherit = 'res.partner'
+
+    clave = fields.Char(string="Clave de acceso")
+
 class news_app(models.Model):
     _name = 'news.app'
     _inherit = 'mail.thread'

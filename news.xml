@@ -55,5 +55,19 @@
 
 
     <menuitem id="item_action_news" name="News" parent="market_price.menu_group_market" sequence="79" action="news_list_action"/>
+  
+  
+    <!-- inherit field clave for login app -->
+    <record id="partner_clave_inherit" model="ir.ui.view">
+      <field name="name">Partner Clave</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+           <field name="ref" position="after">
+              <field name="clave"/>
+           </field>
+      </field>
+  </record>
+  
   </data>
 </openerp>
