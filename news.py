@@ -4,6 +4,7 @@ from openerp import models, fields, api
 
 class news_app(models.Model):
     _name = 'news.app'
+    _inherit = 'mail.thread'
 
     # _defaults = {'name': lambda obj, cr, uid, context: obj.pool.get(
     #     'ir.sequence').get(cr, uid, 'code_news'), }
